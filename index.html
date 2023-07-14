@@ -22,10 +22,10 @@
 <!-- header -->
 <header class="header">
 
-  <div class="overlay"></div>
+  <div class="overlay has-fade hide-for-desktop"></div>
 
   <!-- navbar -->
-  <nav class="flex flex-jc-sb flex-ai-c">
+  <nav class=" container flex flex-jc-sb flex-ai-c">
 
     <!-- header_logo -->
     <a href="/" class="header__logo">
@@ -33,14 +33,14 @@
     </a>
 
     <!-- hamburger_menu -->
-    <a id="hamburger_menu" href="#" class="header__menu hide-for-desktop">
+    <a id="hamburger_menu" href="#" class="header__toggle hide-for-desktop">
       <span></span>
       <span></span>
       <span></span>
     </a>
 
     <!-- header__links -->
-    <div class="header__links hide-for-mobile">
+    <div class="header__links  hide-for-mobile">
       <a href="#">Home</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
@@ -51,9 +51,18 @@
     <!-- header__btn -->
     <a class="hide-for-mobile btn  header__btn" type="button">Request Invite</a>
   </nav>
+
+  <!-- mobile menu -->
+  <div class="header__menu has-fade hide-for-desktop">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Blog</a>
+    <a href="#">Careers</a>
+  </div>
 </header>
 
-<!--  
+ 
 
   Next generation digital banking
 
@@ -110,7 +119,7 @@
   It’s easy to request an invite through the site ...
 
   
-
+<!-- 
   About Us
   Contact
   Blog
@@ -128,6 +137,6 @@
   </div>
   -->
 
-  <script src="/app/js/script.js"></script>
+  <script src="./app/js/script.js"></script>
 </body>
 </html>
