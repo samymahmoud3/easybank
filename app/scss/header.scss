@@ -1,0 +1,86 @@
+.header {
+    nav{
+        padding: 1.0625em 1.5em;
+    }
+
+    &__logo{
+
+        img{
+            width: 8.8125em;
+            height: 1.375em;
+        }
+    }
+
+    &__menu {
+
+        >span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: $darkBlue;
+            &:not(:last-child) {
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    &__links {
+
+        a{
+            position: relative;
+            font-size: $font-sm;
+            color: $grayishBlue;
+            transition: color 300ms ease-in-out;
+            -webkit-transition: color 300ms ease-in-out;
+            -moz-transition: color 300ms ease-in-out;
+            -ms-transition: color 300ms ease-in-out;
+            -o-transition: color 300ms ease-in-out;
+
+            &::after {
+                position: absolute;
+                content: "";
+                height: 5px;
+                width: 100%;
+                display: block;
+                background: linear-gradient(to right, $limeGreen, $brightCyan);
+                left: 0;
+                right: 0;
+                bottom: -30px;
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+                -webkit-transition: opacity 300ms ease-in-out;
+                -moz-transition: opacity 300ms ease-in-out;
+                -ms-transition: opacity 300ms ease-in-out;
+                -o-transition: opacity 300ms ease-in-out;
+            }
+
+            &:not(:last-child) {
+                margin-right: 32px;
+            }
+
+            &:hover {
+                color: $darkBlue;
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            
+        }
+    }
+
+    &__btn {
+        background: linear-gradient(to right, $limeGreen, $brightCyan);
+        transition: opacity 300ms ease-in-out;
+        opacity: 1;
+        -webkit-transition: opacity 300ms ease-in-out;
+        -moz-transition: opacity 300ms ease-in-out;
+        -ms-transition: opacity 300ms ease-in-out;
+        -o-transition: opacity 300ms ease-in-out;
+
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+}
