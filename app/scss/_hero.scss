@@ -1,0 +1,97 @@
+.hero {
+    background-color: $veryLightGray;
+    overflow: hidden;
+    .container {
+        @include breakpoint-up(large){
+            align-items: center;
+            display: flex;
+        }
+    }
+
+    &__img {
+        position: relative;
+        background-image: url('imgs/bg-intro-mobile.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 17.5rem;
+
+        //medium > 640px
+        @include breakpoint-up(medium) {
+            min-height: 25rem;
+            background-position: center 60%;
+        }
+
+        //large > 1024px
+        @include breakpoint-up(large){
+            flex: 3;
+            order: 2;
+            min-height: 41rem;
+            background-image: none;
+        }
+
+        &::before {
+            
+            @include breakpoint-up(large) {
+                position: absolute;
+                content: "";
+                background-image: url('imgs/bg-intro-desktop.svg');
+                background-position: center bottom;
+                background-repeat: no-repeat;
+                height: 100%;
+                width: 150%;
+                background-size: 122%;
+                background-position: 0% 83%;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            background-image: url('imgs/image-mockups.png');
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: 93%;
+            height: 100%;
+            width: 100%;
+
+        //medium > 640px
+        @include breakpoint-up(medium) {
+            background-size: 52%;
+        }
+
+            @include breakpoint-up(large) {
+                width: 120%;
+                height: 122%;
+                background-size: 94%;
+                background-position: center 150%;
+                left: 22%;
+            }
+        }
+    }
+
+    &__text {
+        text-align: center;
+
+        @include breakpoint-up(large){
+            flex: 2;
+            order: 1;
+            text-align: left;
+        }
+        
+        h1 {
+            font-weight: 300;
+            font-size: 2.31rem;
+            line-height: 1.15;
+            color: $darkBlue;    
+
+            @include breakpoint-up(large) {
+                font-size: $font-xlg;
+            }
+        }
+
+        p {
+            line-height: 1.5;
+        }
+    }
+}
