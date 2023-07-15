@@ -90,6 +90,11 @@ body {
   color: hsl(233, 8%, 62%);
   line-height: 1.3;
 }
+@media (min-width: 64em) {
+  body {
+    font-size: 1.125rem;
+  }
+}
 body.noScroll {
   overflow: hidden;
 }
@@ -99,8 +104,34 @@ a, a:visited, a:hover {
 }
 
 .container {
-  padding-left: 1.5rem;
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+.container--pall {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
   padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.container--py {
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+}
+.container--px {
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+}
+.container--pt {
+  padding-top: 2.25rem;
+}
+.container--pl {
+  padding-left: 1.5rem;
+}
+.container--pr {
+  padding-right: 1.5rem;
+}
+.container--pb {
+  padding-bottom: 2.25rem;
 }
 
 .flex {
@@ -130,11 +161,23 @@ button, .btn {
   color: hsl(0, 0%, 100%);
   font-weight: 400;
   cursor: pointer;
+  display: inline-block;
   border-radius: 50px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   -o-border-radius: 50px;
+  background: -webkit-gradient(linear, left top, right top, from(hsl(136, 65%, 51%)), to(hsl(192, 70%, 51%)));
+  background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
+  transition: opacity 300ms ease-in-out;
+  opacity: 1;
+  -webkit-transition: opacity 300ms ease-in-out;
+  -moz-transition: opacity 300ms ease-in-out;
+  -ms-transition: opacity 300ms ease-in-out;
+  -o-transition: opacity 300ms ease-in-out;
+}
+button:hover, .btn:hover {
+  opacity: 0.75;
 }
 
 @media (max-width: 63.9375em) {
@@ -256,6 +299,7 @@ button, .btn {
   opacity: 0.75;
 }
 .header__menu {
+  z-index: 100;
   position: absolute;
   width: calc(100% - 3rem);
   background-color: hsl(0, 0%, 100%);
@@ -278,5 +322,111 @@ button, .btn {
   padding: 0.625rem;
   color: hsl(233, 26%, 24%);
   text-align: center;
+}
+
+.hero {
+  background-color: hsl(0, 0%, 98%);
+  overflow: hidden;
+}
+@media (min-width: 64em) {
+  .hero .container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+.hero__img {
+  position: relative;
+  background-image: url("imgs/bg-intro-mobile.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 17.5rem;
+}
+@media (min-width: 40em) {
+  .hero__img {
+    min-height: 25rem;
+    background-position: center 60%;
+  }
+}
+@media (min-width: 64em) {
+  .hero__img {
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    min-height: 41rem;
+    background-image: none;
+  }
+}
+@media (min-width: 64em) {
+  .hero__img::before {
+    position: absolute;
+    content: "";
+    background-image: url("imgs/bg-intro-desktop.svg");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 150%;
+    background-size: 122%;
+    background-position: 0% 83%;
+  }
+}
+.hero__img::after {
+  position: absolute;
+  content: "";
+  background-image: url("imgs/image-mockups.png");
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: 93%;
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 40em) {
+  .hero__img::after {
+    background-size: 52%;
+  }
+}
+@media (min-width: 64em) {
+  .hero__img::after {
+    width: 120%;
+    height: 122%;
+    background-size: 94%;
+    background-position: center 150%;
+    left: 22%;
+  }
+}
+.hero__text {
+  text-align: center;
+}
+@media (min-width: 64em) {
+  .hero__text {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    text-align: left;
+  }
+}
+.hero__text h1 {
+  font-weight: 300;
+  font-size: 2.31rem;
+  line-height: 1.15;
+  color: hsl(233, 26%, 24%);
+}
+@media (min-width: 64em) {
+  .hero__text h1 {
+    font-size: 3.25rem;
+  }
+}
+.hero__text p {
+  line-height: 1.5;
 }
 /*# sourceMappingURL=style.css.map */
